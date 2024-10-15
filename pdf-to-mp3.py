@@ -80,7 +80,7 @@ import torch
 
 # Function to translate text using DeepL API
 def translate_deepl(text, source_lang='EN', target_lang='PL'):
-    DEEPL_API_KEY = "f61281af-5b10-4c65-beff-cbd476cc3b86"  # Make sure to set your DeepL API key
+    DEEPL_API_KEY = "#DeepL API key#"  # Make sure to set your DeepL API key
     url = " https://api.deepl.com/v2/translate"
     headers = {"Authorization": f"DeepL-Auth-Key {DEEPL_API_KEY}"}
     data = {
