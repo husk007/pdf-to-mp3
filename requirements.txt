@@ -1,3 +1,12 @@
-PyPDF2==1.26.0
-googletrans==4.1.0
-gtts==2.2.3
+PyPDF2==3.0.1
+pyttsx3==2.98
+pydub==0.25.1
+deep-translator==1.11.4
+gTTS==2.5.3
+requests==2.32.3
+moviepy==1.0.3
+reportlab==4.2.4
+langdetect==1.0.9
+argostranslate==1.9.6
+TTS==0.22.0
+torch==2.4.1

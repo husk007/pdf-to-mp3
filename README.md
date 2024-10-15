@@ -1,70 +1,52 @@
-<div align="center">
-  <h1>PDF to MP3 Converter</h1>
-</div>
+# Instrukcja obsługi skryptu PDF to MP3 Converter
 
-<div align="justify">
-  This is a Python script that allows users to convert PDF files to MP3 audio files in the language of their choice. It uses PyPDF2 to extract text from the PDF files, Google Translate API to translate the text into the selected language, and Google Text-to-Speech (gTTS) API to synthesize the speech and save the audio file.
+## Wymagania wstępne
 
-<br>
+Przed uruchomieniem skryptu upewnij się, że masz zainstalowane następujące oprogramowanie i biblioteki:
 
-   The script has a user-friendly command-line interface that prompts the user to select the PDF file, the language, and gives the option to exit or continue converting files. It also creates separate folders for PDF and MP3 files.
-</div>
+- Python 3.6 lub wyższy
+- Biblioteki wymienione w pliku `requirements.txt`
+- `ffmpeg` (wymagany przez biblioteki `pydub` i `moviepy`)
+- (Opcjonalnie) `NordVPN` lub inny klient VPN, jeśli korzystasz z funkcji `reconnect_vpn`
 
-<div align="center">
+## Instalacja
 
-   ## 💡Practical use
+1. Zainstaluj wymagane biblioteki, uruchamiając w terminalu:
 
-</div>
-
-<div align="justify">
-  
-  This script can be useful for people who prefer to listen to text instead of reading. This can be convenient, for example, when traveling on public transport or playing sports. In addition, the script can be used to create audio books or audio lectures.
-
-</div>
-
-<br><br>
-
-<div align="center">
-
-# Settings
-To use it, you need to complete the following steps:
-
-<br>
-
-### 📁 Clone this repository
-
-   ```
-   git clone https://github.com/lazycatcoder/pdf-to-mp3.git
-   ```
-
-<br>
-
-### 📦 Install dependencies
-   
-   ```
-   pip install -r requirements.txt
-   ```
+pip install -r requirements.txt
 
 
-# 
+2. Upewnij się, że `ffmpeg` jest zainstalowany i dostępny w zmiennej środowiskowej `PATH`. Możesz pobrać `ffmpeg` z [oficjalnej strony](https://ffmpeg.org/download.html).
 
-## ✨ How to use
+## Konfiguracja
 
-<div align="justify">
-  
-- Download the repository and install the required modules
-- Create "pdf" and "mp3" folders in the same directory as the script (optional)
-- Place the PDF files to be converted into the "pdf" folder
-- Run the script 🚀
-- Follow the instructions on the screen
+1. Umieść pliki PDF do konwersji w folderze `pdf` w katalogu, w którym znajduje się skrypt.
 
-</div>
+2. W skrypcie uzupełnij klucz API dla DeepL, jeśli planujesz korzystać z tego tłumacza:
 
-<br>
+```python
+DEEPL_API_KEY = "TWÓJ_KLUCZ_API_DEEPL"
 
-### 🔧 Additional Information
-<div align="justify">
 
-🔴 For the script to work correctly, it is necessary that PDF files be recognized or that it is possible to highlight the characters contained in them, since this is necessary for the script to read text from files.
+## Użycie
 
-</div>
+Uruchom skrypt:
+
+python pdf-to-mp3-all.py
+
+Postępuj zgodnie z instrukcjami wyświetlanymi w terminalu:
+
+Wybierz plik PDF do konwersji lub opcję przetworzenia wszystkich plików.
+Wybierz silnik tłumaczenia (Google Translator, DeepL, Argos Translate).
+Wybierz język odtwarzania lub opcję automatycznego wykrywania języka.
+Wybierz silnik TTS (gTTS, pyttsx3, Coqui TTS).
+Po zakończeniu działania skryptu przetłumaczone pliki PDF znajdziesz w folderze translated_pdf, a pliki MP3 w folderze mp3.
+
+## Uwagi
+
+gTTS wymaga połączenia z internetem i może napotkać ograniczenia liczby żądań. Skrypt zawiera mechanizm ponawiania próśb oraz opcjonalne przełączanie VPN.
+pyttsx3 działa offline, ale jakość generowanego głosu może być niższa.
+Coqui TTS oferuje wysoką jakość syntezy mowy i działa lokalnie, ale wymaga więcej zasobów systemowych.
+
+## Problemy i wsparcie
+Jeśli napotkasz problemy podczas korzystania ze skryptu, upewnij się, że wszystkie wymagane biblioteki są poprawnie zainstalowane i że korzystasz z odpowiedniej wersji Pythona. W razie pytań lub problemów skontaktuj się z autorem skryptu.
